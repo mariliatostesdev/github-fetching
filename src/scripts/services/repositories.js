@@ -3,7 +3,7 @@ import { getUserEvents } from './events.js';
 async function getRepos(userName, reposQtty, userInfo) {
 	try {
 		const response = await fetch(
-			`https://api.github.com/users/${userName}/repos?per_page=${reposQtty}`
+			`https://api.github.com/users/${userName}/repos?sort=updated&direction=desc&per_page=${reposQtty}`
 		);
 		const repos = await response.json();
 

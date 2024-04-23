@@ -9,6 +9,9 @@ function renderRepos(repos) {
 
 	if (repos && repos.length > 0) {
 		repos.forEach((repo) => {
+			let updateDate = new Date(repo.updated_at);
+			updateDate = updateDate.toLocaleString().slice(0, 10);
+
 			let languageIcon = '';
 
 			let mainLanguage = repo.language;
@@ -37,13 +40,17 @@ function renderRepos(repos) {
 			reposList += `
 			<li>
 				<a href="${repo.html_url}" target="_blank">
-					<p>${repo.name}</p>
+					<p><strong>${repo.name}</strong></p>
 					<br>
 					<div class="repo-metrics">
 						<p id="forks">${repo.forks_count}</p>
 						<p id="stars">${repo.stargazers_count}</p>
 						<p id="watchers">${repo.watchers_count}</p>
 						<p id="language">${languageIcon} ${mainLanguage}</p>
+					</div>
+					<br>
+					<div class="updateDate">
+						<p>Atualizado em: ${updateDate}</p>
 					</div>
 				</a>
 			</li>`;
