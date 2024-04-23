@@ -1,8 +1,4 @@
-async function renderOnPage(
-	userInfo,
-	repos,
-	filteredEvents
-) {
+async function renderOnPage(userInfo, repos, filteredEvents) {
 	let reposListHtml = renderRepos(repos);
 	let eventsListHtml = renderEvents(filteredEvents);
 	renderUserInfo(userInfo, reposListHtml, eventsListHtml);
