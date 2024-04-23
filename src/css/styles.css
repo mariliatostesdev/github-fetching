@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	font-weight: 300;
+}
+
+img {
+	max-width: 100%;
+}
+
+body {
+	background-color: #24292e;
+	font-family: 'Kumbh Sans', sans-serif;
+	text-align: center;
+	padding-bottom: 100px;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 50px 0 0;
+}
+
+.devicon-github-original {
+	font-size: 60px;
+	margin-bottom: 30px;
+	color: #ffffff;
+}
+
+.section {
+	padding: 70px 0;
+}
+
+.container {
+	width: 60%; /* se for uma tela menor que 980px vai se adaptar a 60% */
+	max-width: 960px; /* quando chegar em 960px para de aumentar */
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 25px 50px -12px;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 30px;
+	padding: 30px;
+	margin: 0 auto;
+}
+
+.container header {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 30px 0;
+}
+
+.container header h2 {
+	font-size: 20px;
+	font-weight: 700;
+	margin-bottom: 30px;
+}
+
+.container header #input-search {
+	width: 400px;
+	font-size: 17px;
+	margin: 0 auto;
+	padding: 10px;
+	border-radius: 7px;
+	border: 1px solid grey;
+}
+
+.container header #btn-search {
+	width: 200px;
+	font-size: 17px;
+	margin: 20px auto 0;
+	padding: 10px;
+	border-radius: 7px;
+	cursor: pointer;
+	border: 1px solid grey;
+}
+
+.container header #btn-search:hover {
+	background-color: hsl(182, 49%, 46%);
+	color: #ffffff;
+	border-color: #ffffff;
+}
+
+.container .profile-data {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.profile-data.showDiv {
+	padding: 40px;
+}
+
+.container .profile-data .info {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.container .profile-data .info .data {
+	width: 50%;
+	padding-left: 40px;
+}
+
+.personal-info {
+	
+	flex-direction: column;
+}
+
+.personal-info p,
+.personal-info h1 {
+	padding: 10px 0;
+}
+
+.social {
+	padding-top: 50px;
+}
+
+.container .profile-data .info img {
+	width: 50%;
+	border-radius: 50%;
+	border: 10px solid hsl(182, 49%, 46%);
+}
+
+.container .profile-data .info h1 {
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.container .profile-data .info p {
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 23px;
+}
+
+/* REPOSITORIES */
+
+.container .profile-data .info .repositories,
+.container .profile-data .info .events {
+	padding: 50px 0;
+}
+
+.container .profile-data .info .repositories h2,
+.container .profile-data .info .events h2 {
+	margin: 30px 0;
+	text-align: center;
+	font-weight: 600;
+}
+
+.container .profile-data .info .repositories ul, .container .profile-data .info .events ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+
+.container .profile-data .info .repositories ul li a,
+.container .profile-data .info .events ul li a {
+	padding: 20px;
+	border: 1px solid grey;
+	margin: 20px;
+	display: block;
+	border-radius: 7px;
+	transition: 0.3s ease-in-out;
+}
+
+strong {
+	font-weight: 600;
+}
+
+.repo-metrics {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+#forks::before {
+	content: "🍴";
+	padding-right: 5px;
+}
+
+#stars::before {
+	content: "⭐";
+	padding-right: 5px;
+}
+
+#watchers::before {
+	content: "👀";
+	padding-right: 5px;
+}
+
+#language {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#language img {
+	height: 23px;
+	width: 23px;
+	border: none;
+	border-radius: 0;
+	padding-right: 5px;
+}
+
+.container .profile-data .info .repositories ul li a:hover,
+.container .profile-data .info .events ul li a:hover {
+	background-color: rgb(255, 238, 80);
+	color: black;
+
+	.container .profile-data.hide {
+		display: none;
+	}
+
+	@media (max-width: 1280px) {
+		.container {
+			flex-direction: column;
+			width: 90%;
+			border-radius: 20px;
+		}
+
+		.container header {
+			width: 100%;
+		}
+
+		.container header h1 {
+			font-size: 24px;
+			text-align: center;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.container header #input-search,
+		.container header #btn-search {
+			width: 100%;
+		}
+	}
+
+	@media (max-width: 425px) {
+		main {
+			padding: 15% 0;
+		}
+
+		.container .profile-data .info img {
+			margin-bottom: 20px;
+		}
+
+		.container .profile-data .info img,
+		.container .profile-data .info .data {
+			width: 100%;
+			padding: 0;
+		}
+	}
+}
