@@ -126,7 +126,7 @@ function renderUserInfo(userInfo, reposListHtml, eventsListHtml) {
 				</div>
 			</div>
 		</div>
-	</div>;`;
+	</div>`;
 	mainContentDiv.innerHTML = userDataTemplate;
 }
 
