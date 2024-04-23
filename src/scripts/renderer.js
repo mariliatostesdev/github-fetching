@@ -1,9 +1,6 @@
 async function renderOnPage(
-	userName,
-	reposQtty,
 	userInfo,
 	repos,
-	userEvents,
 	filteredEvents
 ) {
 	let reposListHtml = renderRepos(repos);
@@ -19,24 +16,26 @@ function renderRepos(repos) {
 			let languageIcon = '';
 
 			let mainLanguage = repo.language;
+			let mainLanguageUrl = '';
 
 			if (mainLanguage === null) {
 				mainLanguage = '';
 			} else if (typeof mainLanguage === 'string') {
 				switch (mainLanguage.toLowerCase()) {
 					case 'html':
-						mainLanguage = 'html5';
+						mainLanguageUrl = 'html5';
 						break;
 					case 'css':
-						mainLanguage = 'css3';
+						mainLanguageUrl = 'css3';
 						break;
 					case 'c#':
-						mainLanguage = 'csharp';
+						mainLanguageUrl = 'csharp';
 						break;
 					default:
+						mainLanguageUrl = mainLanguage.toLowerCase();
 						break;
 				}
-				languageIcon = `<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${mainLanguage.toLowerCase()}/${mainLanguage.toLowerCase()}-original.svg" />`;
+				languageIcon = `<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${mainLanguageUrl}/${mainLanguageUrl}-original.svg" />`;
 			}
 
 			reposList += `

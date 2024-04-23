@@ -7,7 +7,7 @@ async function getRepos(userName, reposQtty, userInfo) {
 		);
 		const repos = await response.json();
 
-		getUserEvents(userName, reposQtty, userInfo, repos);
+		getUserEvents(userName, userInfo, repos);
 	} catch (error) {
 		console.error('Error fetching repos:', error);
 		error.message;

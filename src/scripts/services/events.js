@@ -1,26 +1,25 @@
-import { renderOnPage, reposList } from '../renderer.js';
-import { eventsList } from '../renderer.js';
+import { renderOnPage } from '../renderer.js';
 
-async function getUserEvents(userName, reposQtty, userInfo, repos) {
+async function getUserEvents(userName, userInfo, repos) {
 	try {
 		const response = await fetch(
 			`https://api.github.com/users/${userName}/events`
 		);
 		const userEvents = await response.json();
 
-		filterEvents(userName, reposQtty, userInfo, repos, userEvents);
+		filterEvents(userInfo, repos, userEvents);
 	} catch (error) {
 		console.error('Error fetching user events:', error);
 		error.message;
 	}
 }
 
-async function filterEvents(userName, reposQtty, userInfo, repos, userEvents) {
+async function filterEvents(userInfo, repos, userEvents) {
 	let filteredEvents = userEvents.filter(
 		(e) => e.type === 'PushEvent' || e.type === 'CreateEvent'
 	);
 
-	renderOnPage(userName, reposQtty, userInfo, repos, userEvents, filteredEvents);
+	renderOnPage(userInfo, repos, filteredEvents);
 }
 
 export { getUserEvents };
