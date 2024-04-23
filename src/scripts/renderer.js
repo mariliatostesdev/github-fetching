@@ -73,14 +73,18 @@ function renderEvents(userEvents) {
 						</a>
 					</li>`;
 				} else {
-					eventsList += `<p>Nenhum commit encontrado para este evento</p>`;
+					eventsList += `<li>
+						<a>
+							<strong>${event.repo.name}</strong> - 0 commits neste evento 🙁
+						</a>
+					</li>`;
 				}
 			} else {
-				eventsList += `<p>Nenhum 'PushEvent' ou 'CreateEvent' encontrado</p>`;
+				eventsList += `<p>Nenhum 'PushEvent' ou 'CreateEvent' recente encontrado</p>`;
 			}
 		});
 	} else {
-		eventsList = `<p>Nenhum evento encontrado.</p>`;
+		eventsList = `<p>Nenhum evento recente encontrado.</p>`;
 	}
 
 	return eventsList;
@@ -116,7 +120,7 @@ function renderUserInfo(userInfo, reposListHtml, eventsListHtml) {
 					<ul> ${reposListHtml} </ul>
 				</div>
 				<div class="events">
-					<h2>Eventos e Commits</h2>
+					<h2>Eventos Recentes</h2>
 					<ul> ${eventsListHtml} </ul>
 				</div>
 			</div>

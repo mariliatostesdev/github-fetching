@@ -11,7 +11,7 @@ img {
 }
 
 body {
-	background-color: #24292e;
+	background-color: hsl(155, 27%, 56%);
 	font-family: 'Kumbh Sans', sans-serif;
 	text-align: center;
 	padding-bottom: 100px;
@@ -80,7 +80,7 @@ main {
 }
 
 .container header #btn-search:hover {
-	background-color: hsl(182, 49%, 46%);
+	background-color: hsl(244, 40%, 39%);
 	color: #ffffff;
 	border-color: #ffffff;
 }
@@ -124,7 +124,7 @@ main {
 .container .profile-data .info img {
 	width: 50%;
 	border-radius: 50%;
-	border: 10px solid hsl(182, 49%, 46%);
+	border: 10px solid #7fda89;
 }
 
 .container .profile-data .info h1 {
